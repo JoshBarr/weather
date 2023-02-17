@@ -34,18 +34,20 @@ See the [Google Doc](https://docs.google.com/document/d/1NyBBdb_F_6r6OHRkmBiPkt-
 - Addresses for the geocode can be looked up from an addressfinder, rather than freetext. This reduces the chance of errors around the address, at the cost of only supporting known addresses. For a weather app, that feels like an acceptable tradeoff. This way, the API can
 - User session management is out of scope. If you need to get a different `sessionId`, clear cookies for `localhost:3000`.
 
-## What I didn't done
+## TODO
 
-- Drag and drop. [React DnD](https://react-dnd.github.io/react-dnd/examples/sortable/simple) is the usual solution here. Sortable lists are achieved by making each item a drop target and drag target. The order of cards would be stored in a `useState<string[]>()` on `WeatherView.tsx`, and synced back to the server by storing an additonal key on the session, such as `cardOrder: string[]`, where the `string` is the address.
-- Syncing your temperature preference back to the server. When you refresh the page, your celcius/fahrenheit preference is reset.
-- Realtime incremental updates. This app uses websockets to invalidate the cache, and refetch from the forecast API endpoint. True realtime incremental updates have [several trade-offs](https://tkdodo.eu/blog/using-web-sockets-with-react-query#partial-data-updates) that increase the scope considerably. In all likelihood, the weather data is going to be heavily cached by the API provider behind the websocket.
-- Closing toasts. The [react-hot-toast docs](https://react-hot-toast.com/docs/toast-bar) have an example, should we decide to implement this in future.
+Things I didn't get done:
+
+- [ ] Drag and drop. [React DnD](https://react-dnd.github.io/react-dnd/examples/sortable/simple) is the usual solution here. Sortable lists are achieved by making each item a drop target and drag target. The order of cards would be stored in a `useState<string[]>()` on `WeatherView.tsx`, and synced back to the server by storing an additonal key on the session, such as `cardOrder: string[]`, where the `string` is the address.
+- [ ] Syncing your temperature preference back to the server. When you refresh the page, your celcius/fahrenheit preference is reset.
+- [ ] Realtime incremental updates. This app uses websockets to invalidate the cache, and refetch from the forecast API endpoint. True realtime incremental updates have [several trade-offs](https://tkdodo.eu/blog/using-web-sockets-with-react-query#partial-data-updates) that increase the scope considerably. In all likelihood, the weather data is going to be heavily cached by the API provider behind the websocket.
+- [ ] Closing toasts. The [react-hot-toast docs](https://react-hot-toast.com/docs/toast-bar) have an example, should we decide to implement this in future.
 
 ## What I'd like to add next
 
-- Timezone and current time for each location
-- Weather icon for each time of day (e.g morning, afteroon, evening)
-- An indication of elapsed time through the day. See [Metservice](https://www.metservice.com/towns-cities/locations/wellington)
+- [ ] Timezone and current time for each location
+- [ ] Weather icon for each time of day (e.g morning, afteroon, evening)
+- [ ] An indication of elapsed time through the day. See [Metservice](https://www.metservice.com/towns-cities/locations/wellington) for an example. They also chart rainfall at specific times of day, which is a nice feature for planning your activities.
 
 ## Installation
 
