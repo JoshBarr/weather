@@ -1,0 +1,66 @@
+{
+  "name": "weather",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "dev": "DEVTOOLS=1 next dev",
+    "build": "next build",
+    "start": "next start",
+    "start:tests": "rm -f ./db.json && next dev",
+    "lint": "next lint",
+    "style": "prettier .",
+    "style:fix": "prettier --write .",
+    "test:e2e:debug": "pnpm dlx playwright test --headed --debug",
+    "test:e2e": "pnpm dlx playwright test",
+    "test:e2e:report": "pnpm dlx playwright show-report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "volta": {
+    "node": "18.14.0"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.7.10",
+    "@next/font": "^13.1.6",
+    "@swc/core": "^1.3.35",
+    "@swc/jest": "^0.2.24",
+    "@tanstack/query-sync-storage-persister": "^4.24.6",
+    "@tanstack/react-query": "^4.24.6",
+    "@tanstack/react-query-devtools": "^4.24.6",
+    "@tanstack/react-query-persist-client": "^4.24.6",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^14.4.3",
+    "@types/jest": "^29.4.0",
+    "@whatwg-node/fetch": "^0.8.1",
+    "jest": "^29.4.2",
+    "jest-environment-jsdom": "^29.4.3",
+    "lowdb": "^5.1.0",
+    "msw": "^1.0.1",
+    "next": "^13.1.6",
+    "playwright": "^1.30.0",
+    "react": "18",
+    "react-dom": "18",
+    "react-hot-toast": "^2.4.0",
+    "react-icons": "^4.7.1",
+    "tailwindcss": "^3.2.6",
+    "typescript": "^4.9.5",
+    "ulidx": "^0.5.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.30.0",
+    "@types/node": "^18.13.0",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.10",
+    "autoprefixer": "^10.4.13",
+    "eslint": "^8.34.0",
+    "eslint-config-next": "^13.1.6",
+    "postcss": "^8.4.21",
+    "prettier": "^2.8.4"
+  },
+  "msw": {
+    "workerDirectory": "public"
+  }
+}
