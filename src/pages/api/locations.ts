@@ -24,8 +24,6 @@ const defaultLocations: WeatherLocation[] = [
  * we might persist the data into a store. It's intentionally RPC-ish,
  * as we're using an object as the DB.
  *
- * This DB will NOT survive sever restarts.
- *
  * The store is just keyed off the session, in the real world
  * there would be a map between user <> sessions so that the user
  * could see the same items on all devices.
